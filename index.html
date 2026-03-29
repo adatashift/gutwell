@@ -412,24 +412,29 @@ function toggleObCheck() {
   if (!cb || !btn) return;
   if (cb.checked) {
     btn.style.background = '#2D6A4F';
-    btn.style.color = '#fff';
+    btn.style.color = '#ffffff';
+    btn.style.borderColor = '#2D6A4F';
     btn.style.cursor = 'pointer';
+    btn.onclick = function() { doEnterApp(); };
   } else {
     btn.style.background = '#E2DDD4';
     btn.style.color = '#8A8578';
+    btn.style.borderColor = '#E2DDD4';
     btn.style.cursor = 'not-allowed';
+    btn.onclick = null;
   }
+}
+
+function doEnterApp() {
+  var ob = document.getElementById('onboarding');
+  if (ob) ob.style.display = 'none';
+  LS.set('ob_accepted', true);
 }
 
 function enterApp() {
   var cb = document.getElementById('ob-checkbox');
-  if (!cb || !cb.checked) {
-    alert('Please tick the checkbox first.');
-    return;
-  }
-  var ob = document.getElementById('onboarding');
-  if (ob) ob.style.display = 'none';
-  LS.set('ob_accepted', true);
+  if (!cb || !cb.checked) return;
+  doEnterApp();
 }
 
 function checkOnboarding() {
