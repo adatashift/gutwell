@@ -410,43 +410,30 @@ body { font-family: 'DM Sans', sans-serif; background: #F7F6F2; color: #1A1916; 
 
 <script>
 // ── ONBOARDING ───────────────────────────────────────────────────
-function toggleObCheck() {
-  var cb = document.getElementById('ob-checkbox');
+function obCheckChange() {
+  var cb = document.getElementById('ob-cb');
   var btn = document.getElementById('ob-btn');
   if (!cb || !btn) return;
   if (cb.checked) {
+    btn.disabled = false;
     btn.style.background = '#2D6A4F';
-    btn.style.color = '#ffffff';
-    btn.style.borderColor = '#2D6A4F';
     btn.style.cursor = 'pointer';
-    btn.onclick = function() { doEnterApp(); };
+    btn.onclick = function() {
+      document.getElementById('onboarding').style.display = 'none';
+      try { localStorage.setItem('gw_ob', '1'); } catch(e) {}
+    };
   } else {
-    btn.style.background = '#E2DDD4';
-    btn.style.color = '#8A8578';
-    btn.style.borderColor = '#E2DDD4';
+    btn.disabled = true;
+    btn.style.background = '#ccc';
     btn.style.cursor = 'not-allowed';
     btn.onclick = null;
   }
 }
 
-function doEnterApp() {
-  try { localStorage.setItem('ob_accepted', 'yes'); } catch(e) {}
-  var ob = document.getElementById('onboarding');
-  if (ob) ob.style.display = 'none';
-}
-
-function enterApp() {
-  var cb = document.getElementById('ob-checkbox');
-  if (!cb || !cb.checked) return;
-  doEnterApp();
-}
-
 function checkOnboarding() {
   try {
-    var v = localStorage.getItem('ob_accepted');
-    if (v === 'yes') {
-      var ob = document.getElementById('onboarding');
-      if (ob) ob.style.display = 'none';
+    if (localStorage.getItem('gw_ob') === '1') {
+      document.getElementById('onboarding').style.display = 'none';
     }
   } catch(e) {}
 }
