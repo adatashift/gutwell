@@ -246,6 +246,7 @@ body { font-family: 'DM Sans', sans-serif; background: #F7F6F2; color: #1A1916; 
   <button class="tnav" id="tab-meals" onclick="goTab('meals')">Meals</button>
   <button class="tnav" id="tab-herbs" onclick="goTab('herbs')">Herbs</button>
   <button class="tnav" id="tab-reminders" onclick="goTab('reminders')">Reminders</button>
+  <button class="tnav" id="tab-about" onclick="goTab('about')">About</button>
 </div>
 
 <!-- CHECK IN -->
@@ -387,11 +388,85 @@ body { font-family: 'DM Sans', sans-serif; background: #F7F6F2; color: #1A1916; 
   </div>
 </div>
 
+<!-- ABOUT -->
+<div class="panel" id="panel-about">
+
+  <div class="card">
+    <h2>🌿 About GutWell</h2>
+    <p>My mummy is a health enthusiast.</p>
+    <p>In one of our many conversations about wellness, an idea came up regarding the brain-gut connection and the links between digestion, energy levels, and how that can be tracked.</p>
+    <p>Around the same time, I had been curious about the real capability of AI — specifically Claude by Anthropic. Not the surface-level "ask it a question" kind of use, but something deeper. Could I use it to actually build something? Something functional, useful, and deployable?</p>
+    <p style="margin-bottom:0">GutWell became the answer to both questions at once.</p>
+  </div>
+
+  <div class="card">
+    <h2>💡 How It Was Built</h2>
+    <p>This app was created entirely through structured collaboration with Claude, Anthropic's AI assistant — using prompt engineering, iterative testing, and clear thinking rather than traditional coding.</p>
+    <p>Every feature was scoped, built, tested, broken, fixed, and refined through conversation. The AI generated the code. The judgment, decisions, and direction were mine.</p>
+    <p style="margin-bottom:0">This project is a demonstration of what becomes possible when domain knowledge meets the right tools and the will to keep going.</p>
+  </div>
+
+  <div class="card">
+    <h2>⚙️ What This Demonstrates</h2>
+    <p style="margin-bottom:10px">A few things this project reflects in practice:</p>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;"><span style="color:#2D6A4F;font-weight:600;flex-shrink:0;">&#10003;</span><span>Prompt engineering applied to a real-world problem</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;"><span style="color:#2D6A4F;font-weight:600;flex-shrink:0;">&#10003;</span><span>Taking an idea from concept to a deployed, working product</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;"><span style="color:#2D6A4F;font-weight:600;flex-shrink:0;">&#10003;</span><span>Iterative development — building, testing, and improving</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;"><span style="color:#2D6A4F;font-weight:600;flex-shrink:0;">&#10003;</span><span>Responsible decision-making about features and user safety</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;"><span style="color:#2D6A4F;font-weight:600;flex-shrink:0;">&#10003;</span><span>Continuous learning as a daily practice</span></div>
+    </div>
+  </div>
+
+  <div class="card" style="background:linear-gradient(135deg,#2D6A4F,#1a4d38);color:#fff;border:none;">
+    <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;opacity:0.7;margin-bottom:6px;">ABOUT THE BUILDER</div>
+    <div style="font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:3px;">Renelle Griffith</div>
+    <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.5px;opacity:0.8;margin-bottom:10px;">OPERATIONS &amp; BUSINESS INTELLIGENCE PROFESSIONAL &middot; TRINIDAD &amp; TOBAGO</div>
+    <div style="font-size:13px;line-height:1.6;opacity:0.9;margin-bottom:14px;font-style:italic;">I turn operational complexity into clear, accountable outputs &mdash; the kind that executives trust and organisations depend on.</div>
+    <p style="font-size:13px;line-height:1.6;opacity:0.85;margin-bottom:16px;">This project started with a conversation with my mummy. It became a visible record of how I learn, solve problems, and deliver.</p>
+    <a href="https://www.linkedin.com/in/renellegriffith/" target="_blank" style="display:inline-block;font-family:'DM Mono',monospace;font-size:10px;color:#2D6A4F;background:#fff;padding:8px 18px;border-radius:20px;text-decoration:none;letter-spacing:0.5px;font-weight:500;">Connect on LinkedIn</a>
+  </div>
+
+  <div class="card">
+    <h2>📱 Keeping Your Data &amp; Tracking Progress</h2>
+    <p>GutWell saves everything privately on the device being used. Here is what you need to know to get the most out of it.</p>
+
+    <div style="font-family:'DM Mono',monospace;font-size:10px;color:#2D6A4F;letter-spacing:0.5px;margin-bottom:8px;margin-top:4px;">WHERE DATA LIVES</div>
+    <p style="margin-bottom:14px;">All logs — check-ins, journal entries, and symptoms — are saved directly on the device. Nothing is sent to the internet. Only the person using the device can see it.</p>
+
+    <div style="font-family:'DM Mono',monospace;font-size:10px;color:#2D6A4F;letter-spacing:0.5px;margin-bottom:8px;">TO KEEP DATA SAFE</div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px;">
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#8A8578;"><span style="color:#B5832A;flex-shrink:0;">&#9679;</span><span>Always open GutWell from the same browser. If Chrome was used to open it the first time, always use Chrome. Safari and Chrome do not share data.</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#8A8578;"><span style="color:#B5832A;flex-shrink:0;">&#9679;</span><span>The safest option is to add GutWell to the home screen. Tap Share then Add to Home Screen on iPhone, or tap the three dots then Add to Home Screen on Android. Opening it from the home screen icon keeps everything consistent.</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#8A8578;"><span style="color:#B5832A;flex-shrink:0;">&#9679;</span><span>Do not clear browser history or browser data — doing so will permanently delete all check-in history and journal entries.</span></div>
+    </div>
+
+    <div style="font-family:'DM Mono',monospace;font-size:10px;color:#2D6A4F;letter-spacing:0.5px;margin-bottom:8px;">TO TRACK PROPERLY</div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px;">
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#8A8578;"><span style="color:#2D6A4F;flex-shrink:0;">&#10003;</span><span>Check in every day — even on bad days. Honest data builds the clearest picture over time.</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#8A8578;"><span style="color:#2D6A4F;flex-shrink:0;">&#10003;</span><span>Log a journal entry a few times a week. Patterns often only become visible when things are written down.</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#8A8578;"><span style="color:#2D6A4F;flex-shrink:0;">&#10003;</span><span>Tap the Progress tab after two weeks to see trends — bloating averages, energy levels, skin flares, and the current streak.</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#8A8578;"><span style="color:#2D6A4F;flex-shrink:0;">&#10003;</span><span>Export data from the Progress tab before any phone reset or upgrade. This creates a spreadsheet that can be saved or emailed to a practitioner.</span></div>
+    </div>
+
+    <div style="font-family:'DM Mono',monospace;font-size:10px;color:#2D6A4F;letter-spacing:0.5px;margin-bottom:8px;">IF SWITCHING PHONES</div>
+    <p style="margin-bottom:0;font-size:13px;color:#8A8578;">Export data first from the Progress tab. History cannot be transferred automatically — it lives on the current device only.</p>
+  </div>
+
+</div>
+
 
 <div id="toast"></div>
 
-<div style="text-align:center;padding:16px 24px 24px;font-family:'DM Mono',monospace;font-size:10px;color:#8A8578;border-top:1px solid #E2DDD4;margin-top:8px;letter-spacing:0.3px">
-  For demonstration purposes only &middot; Not medical advice &middot; Always consult a qualified healthcare practitioner
+<div style="text-align:center;padding:20px 24px 28px;border-top:1px solid #E2DDD4;margin-top:8px;background:#fff;">
+  <div style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8578;margin-bottom:12px;letter-spacing:0.3px">
+    For demonstration purposes only &middot; Not medical advice &middot; Always consult a qualified healthcare practitioner
+  </div>
+  <div style="width:40px;height:1px;background:#E2DDD4;margin:0 auto 12px;"></div>
+  <div style="font-family:'DM Serif Display',serif;font-size:14px;color:#1A1916;margin-bottom:3px;">Renelle Griffith</div>
+  <div style="font-family:'DM Mono',monospace;font-size:9px;color:#2D6A4F;letter-spacing:0.5px;margin-bottom:6px;">OPERATIONS &amp; BUSINESS INTELLIGENCE PROFESSIONAL</div>
+  <div style="font-size:11px;color:#8A8578;line-height:1.5;margin-bottom:10px;font-style:italic;max-width:360px;margin-left:auto;margin-right:auto;">I turn operational complexity into clear, accountable outputs &mdash; the kind that executives trust and organisations depend on.</div>
+  <a href="https://www.linkedin.com/in/renellegriffith/" target="_blank" style="display:inline-block;font-family:'DM Mono',monospace;font-size:9px;color:#fff;background:#2D6A4F;padding:6px 16px;border-radius:20px;text-decoration:none;letter-spacing:0.5px;">Connect on LinkedIn</a>
 </div>
 
 <script>
@@ -467,15 +542,127 @@ document.getElementById('datebadge').textContent =
   new Date().toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric'}).toUpperCase();
 
 // ── PHASE DATA ───────────────────────────────────────────────────
-var PHASES = [
-  {
-    num:1, label:'Phase 1', name:'Get Moving', weeks:'Weeks 1-2', cls:'p1',
-    focus:'Motility, hydration, establishing your morning routine.',
-    meals:[
+var PHASE_MEALS = [
+  // PHASE 1 — 7 days
+  [
+    [ // Sunday
       {time:'Morning', name:'Ginger Oats & Mango', desc:'Rolled oats with sliced fresh mango, pumpkin seeds, warm ginger lemon water on the side.', tag:'Prebiotic + Enzyme'},
       {time:'Midday', name:'Snapper & Ground Provisions', desc:'Steamed red snapper with boiled green banana, okra, and callaloo. Papaya wedge after.', tag:'Omega-3 + Motility'},
       {time:'Evening', name:'Pumpkin Soup', desc:'Light pumpkin and dasheen soup with fresh herbs. Keep the evening meal small and easy to digest.', tag:'Anti-inflammatory'}
     ],
+    [ // Monday
+      {time:'Morning', name:'Banana Porridge', desc:'Green banana porridge with a drizzle of honey and a slice of papaya. Warm lemon water on the side.', tag:'Soluble Fibre'},
+      {time:'Midday', name:'Stewed Fish & Yam', desc:'Lightly stewed kingfish with boiled yam, steamed pumpkin, and a side of callaloo.', tag:'Omega-3 + Motility'},
+      {time:'Evening', name:'Callaloo Soup', desc:'Light callaloo and dasheen soup with a small portion of ground provisions. Easy on digestion.', tag:'Magnesium Rich'}
+    ],
+    [ // Tuesday
+      {time:'Morning', name:'Pawpaw & Oat Smoothie Bowl', desc:'Blended oats with fresh papaya, a banana, and pumpkin seeds. Ginger tea alongside.', tag:'Enzyme + Prebiotic'},
+      {time:'Midday', name:'Baked Snapper & Okra', desc:'Baked red snapper with steamed okra, boiled green banana, and fresh tomato salad.', tag:'Gut Lining + Motility'},
+      {time:'Evening', name:'Vegetable Broth', desc:'Light broth with carrots, pumpkin, and dasheen. A small portion of boiled provisions on the side.', tag:'Anti-inflammatory'}
+    ],
+    [ // Wednesday
+      {time:'Morning', name:'Cornmeal Porridge', desc:'Smooth cornmeal porridge with a sprinkle of cinnamon and sliced mango. Warm ginger water first.', tag:'Gentle + Soothing'},
+      {time:'Midday', name:'Steamed Flying Fish & Provisions', desc:'Steamed flying fish with breadfruit, okra, and callaloo. Fresh lime squeeze over everything.', tag:'Omega-3 + Fibre'},
+      {time:'Evening', name:'Pumpkin & Carrot Soup', desc:'Blended pumpkin and carrot soup with a hint of fresh turmeric. Light and warming.', tag:'Anti-inflammatory'}
+    ],
+    [ // Thursday
+      {time:'Morning', name:'Plantain & Egg Breakfast', desc:'Boiled ripe plantain with two scrambled eggs and a side of sliced papaya. Ginger tea alongside.', tag:'Prebiotic + Protein'},
+      {time:'Midday', name:'Fish Broth & Provisions', desc:'Light fish broth with yam, dasheen, and dumplings. A classic Caribbean healing meal.', tag:'Gut Soothing'},
+      {time:'Evening', name:'Steamed Callaloo & Provisions', desc:'Steamed callaloo with boiled green banana and a small portion of pumpkin. Keep it simple.', tag:'Magnesium + Fibre'}
+    ],
+    [ // Friday
+      {time:'Morning', name:'Oats with Soursop', desc:'Rolled oats with fresh soursop pulp and a sprinkle of pumpkin seeds. Peppermint tea on the side.', tag:'Prebiotic + Antimicrobial'},
+      {time:'Midday', name:'Stewed Saltfish & Breadfruit', desc:'Lightly stewed saltfish with roasted breadfruit and fresh salad. A traditional Caribbean staple.', tag:'Prebiotic + Omega-3'},
+      {time:'Evening', name:'Dasheen Soup', desc:'Smooth dasheen soup with fresh herbs and a squeeze of lime. Light and easy to digest.', tag:'Gut Gentle'}
+    ],
+    [ // Saturday
+      {time:'Morning', name:'Mango & Ginger Smoothie', desc:'Fresh mango blended with ginger, banana, and a tablespoon of ground flaxseed. Hydrating start.', tag:'Enzyme + Motility'},
+      {time:'Midday', name:'Grilled Kingfish & Yam', desc:'Grilled kingfish with boiled yam, steamed pumpkin, okra, and a fresh tomato salad.', tag:'Omega-3 + Motility'},
+      {time:'Evening', name:'Light Vegetable Soup', desc:'Simple carrot, pumpkin, and cho cho soup with a small portion of ground provisions.', tag:'Anti-inflammatory'}
+    ]
+  ],
+  // PHASE 2 — 7 days
+  [
+    [ // Sunday
+      {time:'Morning', name:'Kefir & Tropical Fruit Bowl', desc:'Plain kefir with mango, papaya, and ground flaxseed. Ginger tea on the side.', tag:'Probiotic + Prebiotic'},
+      {time:'Midday', name:'Fish & Bean Bowl', desc:'Grilled kingfish with stewed red beans, rice (cooked and cooled), and steamed callaloo.', tag:'Resistant Starch + Fibre'},
+      {time:'Evening', name:'Breadfruit & Vegetable Stew', desc:'Roasted breadfruit with mixed vegetables in a light coconut broth. Pineapple wedge after.', tag:'Prebiotic + Enzyme'}
+    ],
+    [ // Monday
+      {time:'Morning', name:'Yogurt & Mango Parfait', desc:'Plain live yogurt layered with fresh mango, banana, and pumpkin seeds. Moringa tea alongside.', tag:'Probiotic + Prebiotic'},
+      {time:'Midday', name:'Stewed Pigeon Peas & Rice', desc:'Stewed pigeon peas with coconut rice (cooked and cooled), steamed callaloo and baked fish.', tag:'Resistant Starch + Fibre'},
+      {time:'Evening', name:'Roasted Pumpkin Soup', desc:'Roasted pumpkin blended with fresh ginger and coconut milk. Light and microbiome-friendly.', tag:'Prebiotic + Anti-inflammatory'}
+    ],
+    [ // Tuesday
+      {time:'Morning', name:'Kefir Smoothie', desc:'Kefir blended with soursop, banana, and a teaspoon of turmeric. Anti-inflammatory morning start.', tag:'Probiotic + Anti-inflammatory'},
+      {time:'Midday', name:'Lentil & Callaloo Bowl', desc:'Stewed lentils with steamed callaloo, boiled green banana, and grilled snapper on the side.', tag:'Prebiotic + Omega-3'},
+      {time:'Evening', name:'Cho Cho & Carrot Stew', desc:'Lightly stewed cho cho and carrots in a coconut broth with fresh herbs and dasheen.', tag:'Gut Feeding + Fibre'}
+    ],
+    [ // Wednesday
+      {time:'Morning', name:'Overnight Oats & Papaya', desc:'Oats soaked overnight in kefir, topped with fresh papaya and a drizzle of honey.', tag:'Probiotic + Enzyme'},
+      {time:'Midday', name:'Black Eye Peas & Provisions', desc:'Stewed black eye peas with yam, plantain, and grilled kingfish. Colourful and fibre-rich.', tag:'Prebiotic + Diverse Plants'},
+      {time:'Evening', name:'Breadfruit Soup', desc:'Light breadfruit and vegetable soup with fresh thyme and a squeeze of lime.', tag:'Prebiotic + Soothing'}
+    ],
+    [ // Thursday
+      {time:'Morning', name:'Banana & Flaxseed Porridge', desc:'Oat porridge with mashed ripe banana and ground flaxseed. Kefir on the side as a drink.', tag:'Prebiotic + Probiotic'},
+      {time:'Midday', name:'Chickpea & Vegetable Curry', desc:'Light Caribbean-spiced chickpea curry with rice (cooked and cooled) and steamed callaloo.', tag:'Resistant Starch + Diverse Plants'},
+      {time:'Evening', name:'Pumpkin & Lentil Soup', desc:'Smooth pumpkin and red lentil soup with fresh turmeric and coconut milk.', tag:'Prebiotic + Anti-inflammatory'}
+    ],
+    [ // Friday
+      {time:'Morning', name:'Yogurt & Soursop Bowl', desc:'Plain live yogurt with fresh soursop pulp, mango, and pumpkin seeds. Peppermint tea alongside.', tag:'Probiotic + Antimicrobial'},
+      {time:'Midday', name:'Saltfish & Provisions', desc:'Lightly stewed saltfish with roasted breadfruit, boiled green banana, and avocado.', tag:'Omega-3 + Prebiotic'},
+      {time:'Evening', name:'Vegetable & Bean Soup', desc:'Mixed vegetable soup with red kidney beans, carrots, and cho cho in a light herb broth.', tag:'Prebiotic + Fibre'}
+    ],
+    [ // Saturday
+      {time:'Morning', name:'Tropical Kefir Smoothie Bowl', desc:'Thick kefir blended with mango and pineapple, topped with banana slices and flaxseed.', tag:'Probiotic + Enzyme'},
+      {time:'Midday', name:'Grilled Fish & Three Provisions', desc:'Grilled snapper with yam, dasheen, and plantain. Three different resistant starches in one meal.', tag:'Resistant Starch + Omega-3'},
+      {time:'Evening', name:'Callaloo & Coconut Soup', desc:'Fresh callaloo cooked in light coconut broth with okra and fresh herbs.', tag:'Magnesium + Gut Feeding'}
+    ]
+  ],
+  // PHASE 3 — 7 days
+  [
+    [ // Sunday
+      {time:'Morning', name:'Bone Broth Eggs & Yam', desc:'Two eggs cooked in bone broth with boiled yellow yam and steamed callaloo. Moringa tea.', tag:'Collagen + Gut Lining'},
+      {time:'Midday', name:'Snapper Escovitch & Provisions', desc:'Lightly fried snapper with green banana, dasheen, and roasted vegetables.', tag:'Omega-3 + Diversity'},
+      {time:'Evening', name:'Golden Turmeric Soup', desc:'Pumpkin, carrot, and dasheen soup with fresh turmeric and black pepper.', tag:'Anti-inflammatory'}
+    ],
+    [ // Monday
+      {time:'Morning', name:'Collagen Porridge', desc:'Oats cooked in bone broth with mango and pumpkin seeds. Rich in gut-healing collagen.', tag:'Collagen + Prebiotic'},
+      {time:'Midday', name:'Baked Fish & Rainbow Provisions', desc:'Baked kingfish with yam, dasheen, plantain, and roasted pumpkin. Aim for five colours.', tag:'Omega-3 + Plant Diversity'},
+      {time:'Evening', name:'Moringa & Pumpkin Soup', desc:'Pumpkin soup finished with fresh moringa leaves, turmeric, and black pepper.', tag:'Anti-inflammatory + Nutrients'}
+    ],
+    [ // Tuesday
+      {time:'Morning', name:'Bone Broth Scramble', desc:'Eggs scrambled in bone broth with callaloo and fresh tomato. Moringa tea alongside.', tag:'Collagen + Gut Lining'},
+      {time:'Midday', name:'Stewed Oxtail & Provisions', desc:'Slow-cooked oxtail rich in collagen with yam, dasheen, and butter beans.', tag:'Collagen + Fibre'},
+      {time:'Evening', name:'Turmeric Fish Broth', desc:'Light fish broth with fresh turmeric, black pepper, cho cho, and dasheen.', tag:'Anti-inflammatory + Omega-3'}
+    ],
+    [ // Wednesday
+      {time:'Morning', name:'Tropical Collagen Smoothie', desc:'Mango, pineapple, and banana blended with collagen powder and coconut water. Bromelain-rich.', tag:'Collagen + Enzyme'},
+      {time:'Midday', name:'Grilled Snapper & Seven Vegetables', desc:'Grilled snapper with seven different vegetables — aim for maximum colour and plant variety.', tag:'Omega-3 + 7 Plants'},
+      {time:'Evening', name:'Cho Cho & Turmeric Soup', desc:'Light cho cho soup with fresh turmeric, ginger, and a squeeze of lime.', tag:'Anti-inflammatory + Soothing'}
+    ],
+    [ // Thursday
+      {time:'Morning', name:'Yam & Egg Breakfast', desc:'Boiled yellow yam with two poached eggs in bone broth and fresh callaloo. Zinc-rich start.', tag:'Zinc + Collagen'},
+      {time:'Midday', name:'Fish & Diverse Provisions', desc:'Steamed fish with breadfruit, yam, dasheen, green banana, and pumpkin. Maximum variety.', tag:'Omega-3 + Diverse Plants'},
+      {time:'Evening', name:'Golden Lentil Soup', desc:'Red lentil soup with fresh turmeric, black pepper, pumpkin, and coconut milk.', tag:'Anti-inflammatory + Prebiotic'}
+    ],
+    [ // Friday
+      {time:'Morning', name:'Collagen Oat Bowl', desc:'Oats cooked in bone broth topped with soursop, mango, and pumpkin seeds.', tag:'Collagen + Prebiotic'},
+      {time:'Midday', name:'Slow Cooked Chicken & Provisions', desc:'Slow-cooked chicken with callaloo, yam, dasheen, and fresh herbs. Collagen-rich broth.', tag:'Collagen + Gut Lining'},
+      {time:'Evening', name:'Pumpkin & Moringa Soup', desc:'Smooth pumpkin soup with fresh moringa leaves, ginger, and black pepper.', tag:'Anti-inflammatory + Nutrients'}
+    ],
+    [ // Saturday
+      {time:'Morning', name:'Weekend Bone Broth Bowl', desc:'Rich bone broth with soft-boiled egg, callaloo, yam, and a drizzle of olive oil.', tag:'Collagen + Healing'},
+      {time:'Midday', name:'Grilled Fish & Colourful Salad', desc:'Grilled kingfish with a large salad of tomato, cucumber, avocado, and roasted pumpkin.', tag:'Omega-3 + 6 Plants'},
+      {time:'Evening', name:'Turmeric & Coconut Soup', desc:'Creamy turmeric and coconut milk soup with carrots, cho cho, and fresh black pepper.', tag:'Anti-inflammatory + Soothing'}
+    ]
+  ]
+];
+
+var PHASES = [
+  {
+    num:1, label:'Phase 1', name:'Get Moving', weeks:'Weeks 1-2', cls:'p1',
+    focus:'Motility, hydration, establishing your morning routine.',
     why:'This phase prioritises soluble fibre from green banana and oats to gently stimulate motility without worsening bloating. Papaya provides natural digestive enzymes. Okra soothes and lubricates the intestinal lining. Fresh fish delivers omega-3s targeting gut-skin inflammation.',
     reminders:[
       {id:'r1', name:'Warm Lemon & Ginger Water', detail:'First thing, before coffee or food', time:'Morning'},
@@ -489,11 +676,6 @@ var PHASES = [
   {
     num:2, label:'Phase 2', name:'Rebuild', weeks:'Weeks 3-4', cls:'p2',
     focus:'Feeding the microbiome, diversifying gut bacteria, reducing inflammation.',
-    meals:[
-      {time:'Morning', name:'Kefir & Tropical Fruit Bowl', desc:'Plain kefir with mango, papaya, and ground flaxseed. Ginger tea on the side.', tag:'Probiotic + Prebiotic'},
-      {time:'Midday', name:'Fish & Bean Bowl', desc:'Grilled kingfish with stewed red beans, rice (cooked and cooled), and steamed callaloo.', tag:'Resistant Starch + Fibre'},
-      {time:'Evening', name:'Breadfruit & Vegetable Stew', desc:'Roasted breadfruit with mixed vegetables in a light coconut broth. Pineapple wedge after.', tag:'Prebiotic + Enzyme'}
-    ],
     why:'Phase 2 introduces fermented foods like kefir to seed the microbiome with beneficial bacteria. Cooked and cooled rice becomes resistant starch - powerful prebiotic fuel for good bacteria. Breadfruit feeds microbial diversity. Bean intake increases gradually for prebiotic fibre.',
     reminders:[
       {id:'r1', name:'Warm Lemon & Ginger Water', detail:'First thing, before coffee or food', time:'Morning'},
@@ -507,11 +689,6 @@ var PHASES = [
   {
     num:3, label:'Phase 3', name:'Repair & Sustain', weeks:'Month 2+', cls:'p3',
     focus:'Gut lining repair, nutrient restoration, locking in long-term habits.',
-    meals:[
-      {time:'Morning', name:'Bone Broth Eggs & Yam', desc:'Two eggs cooked in bone broth with boiled yellow yam and steamed callaloo. Moringa tea.', tag:'Collagen + Gut Lining'},
-      {time:'Midday', name:'Snapper Escovitch & Provisions', desc:'Lightly fried snapper with green banana, dasheen, and roasted vegetables.', tag:'Omega-3 + Diversity'},
-      {time:'Evening', name:'Golden Turmeric Soup', desc:'Pumpkin, carrot, and dasheen soup with fresh turmeric and black pepper.', tag:'Anti-inflammatory'}
-    ],
     why:'Phase 3 focuses on gut lining repair using bone broth collagen and glutamine. Turmeric with black pepper provides deep anti-inflammatory action for both gut lining and skin. Meal diversity peaks here, aiming for 25-30 different plants per week. Omega-3s continue targeting the eczema connection.',
     reminders:[
       {id:'r1', name:'Warm Bone Broth or Lemon Water', detail:'First thing in the morning', time:'Morning'},
@@ -883,6 +1060,8 @@ function buildMeals() {
   var pi = getPhaseIndex();
   if (pi > 2) pi = 2;
   var p = PHASES[pi];
+  var dow = new Date().getDay();
+  var todayMeals = PHASE_MEALS[pi][dow];
   buildBanner('pb-meals');
   var fc = document.getElementById('meal-focus');
   var wy = document.getElementById('meal-why');
@@ -891,8 +1070,8 @@ function buildMeals() {
   if (wy) wy.textContent = p.why;
   if (!mc) return;
   var html = '';
-  for (var i = 0; i < p.meals.length; i++) {
-    var m = p.meals[i];
+  for (var i = 0; i < todayMeals.length; i++) {
+    var m = todayMeals[i];
     html += '<div class="mcard"><div class="mtime">' + m.time + '</div><div class="mname">' + m.name + '</div><div class="mdesc">' + m.desc + '</div><span class="mtag">' + m.tag + '</span></div>';
   }
   mc.innerHTML = html;
