@@ -259,7 +259,8 @@ body { font-family: 'DM Sans', sans-serif; background: #F7F6F2; color: #1A1916; 
   <span class="slabel">Today's Check-In</span>
   <div class="card" id="checkin-form">
     <h2>How are you feeling?</h2>
-    <p>30 seconds. Honest answers build the clearest picture over time.</p>
+    <p>Under 2 minutes. Honest answers build the clearest picture over time.</p>
+
     <div class="score-row">
       <div class="score-block">
         <label>BLOATING (1=none, 5=severe)</label>
@@ -270,6 +271,25 @@ body { font-family: 'DM Sans', sans-serif; background: #F7F6F2; color: #1A1916; 
         <div class="dots" id="dots-energy"></div>
       </div>
     </div>
+
+    <div class="score-row">
+      <div class="score-block">
+        <label>STRESS (1=calm, 5=very stressed)</label>
+        <div class="dots" id="dots-stress"></div>
+      </div>
+      <div class="score-block">
+        <label>SLEEP QUALITY (1=poor, 5=great)</label>
+        <div class="dots" id="dots-sleep"></div>
+      </div>
+    </div>
+
+    <div class="score-row">
+      <div class="score-block">
+        <label>MOOD (1=low, 5=great)</label>
+        <div class="dots" id="dots-mood"></div>
+      </div>
+    </div>
+
     <label style="display:block;font-family:'DM Mono',monospace;font-size:10px;color:#8A8578;margin-bottom:8px;letter-spacing:0.3px">BOWEL MOVEMENT TODAY</label>
     <div class="pills" id="bowel-pills">
       <button class="pill" onclick="pickPill('bowel-pills', this)">None</button>
@@ -277,10 +297,14 @@ body { font-family: 'DM Sans', sans-serif; background: #F7F6F2; color: #1A1916; 
       <button class="pill" onclick="pickPill('bowel-pills', this)">Yes - Difficult</button>
       <button class="pill" onclick="pickPill('bowel-pills', this)">Diarrhea</button>
     </div>
-    <div class="sw-row">
-      <label class="sw-label">Skin flare today?</label>
-      <label class="sw"><input type="checkbox" id="eczema-sw"><span class="swtrack"></span></label>
+
+    <label style="display:block;font-family:'DM Mono',monospace;font-size:10px;color:#8A8578;margin-bottom:8px;letter-spacing:0.3px">HOW DID YOU FEEL AFTER YOUR MAIN MEAL?</label>
+    <div class="pills" id="meal-feel-pills">
+      <button class="pill" onclick="pickPill('meal-feel-pills', this)">Comfortable</button>
+      <button class="pill" onclick="pickPill('meal-feel-pills', this)">Slightly Uncomfortable</button>
+      <button class="pill" onclick="pickPill('meal-feel-pills', this)">Very Uncomfortable</button>
     </div>
+
     <label style="display:block;font-family:'DM Mono',monospace;font-size:10px;color:#8A8578;margin-bottom:8px;letter-spacing:0.3px">WATER INTAKE TODAY</label>
     <div class="pills" id="water-pills">
       <button class="pill" onclick="pickPill('water-pills', this)">Less than 1L</button>
@@ -288,6 +312,22 @@ body { font-family: 'DM Sans', sans-serif; background: #F7F6F2; color: #1A1916; 
       <button class="pill" onclick="pickPill('water-pills', this)">1.5 - 2L</button>
       <button class="pill" onclick="pickPill('water-pills', this)">2L or more</button>
     </div>
+
+    <div class="sw-row">
+      <label class="sw-label">Did you move or walk today?</label>
+      <label class="sw"><input type="checkbox" id="moved-sw"><span class="swtrack"></span></label>
+    </div>
+
+    <div class="sw-row">
+      <label class="sw-label">Any fermented food today? (kefir, yogurt, etc)</label>
+      <label class="sw"><input type="checkbox" id="fermented-sw"><span class="swtrack"></span></label>
+    </div>
+
+    <div class="sw-row">
+      <label class="sw-label">Any skin reaction today? (breakout, rash, irritation)</label>
+      <label class="sw"><input type="checkbox" id="eczema-sw"><span class="swtrack"></span></label>
+    </div>
+
     <button class="btn btn-g" onclick="submitCheckin()">Save Check-In</button>
   </div>
 </div>
@@ -434,6 +474,7 @@ body { font-family: 'DM Sans', sans-serif; background: #F7F6F2; color: #1A1916; 
     <div style="font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:3px;">Renelle Griffith</div>
     <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.5px;opacity:0.8;margin-bottom:10px;">OPERATIONS &amp; BUSINESS INTELLIGENCE PROFESSIONAL &middot; TRINIDAD &amp; TOBAGO</div>
     <div style="font-size:13px;line-height:1.6;opacity:0.9;margin-bottom:14px;font-style:italic;">I turn operational complexity into clear, accountable outputs &mdash; the kind that executives trust and organisations depend on.</div>
+    <div style="font-size:13px;line-height:1.6;opacity:0.85;margin-bottom:16px;">If you are using GutWell, exploring it out of curiosity, or found it through GitHub — I would love to hear your thoughts. Feel free to connect.</div>
     <a href="https://www.linkedin.com/in/renellegriffith/" target="_blank" style="display:inline-block;font-family:'DM Mono',monospace;font-size:10px;color:#2D6A4F;background:#fff;padding:8px 18px;border-radius:20px;text-decoration:none;letter-spacing:0.5px;font-weight:500;">Connect on LinkedIn</a>
   </div>
 
@@ -855,15 +896,25 @@ function checkTodayDone() {
 function submitCheckin() {
   var bloating = getSelectedDot('dots-bloating');
   var energy = getSelectedDot('dots-energy');
+  var stress = getSelectedDot('dots-stress');
+  var sleep = getSelectedDot('dots-sleep');
+  var mood = getSelectedDot('dots-mood');
   var bowelEl = document.querySelector('#bowel-pills .pill.on');
   var waterEl = document.querySelector('#water-pills .pill.on');
-  if (!bloating || !energy || !bowelEl) { toast('Please fill in all fields'); return; }
+  var mealFeelEl = document.querySelector('#meal-feel-pills .pill.on');
+  if (!bloating || !energy || !stress || !sleep || !mood || !bowelEl) { toast('Please fill in all fields'); return; }
   var entry = {
     date: todayKey(),
     bloating: bloating,
     energy: energy,
+    stress: stress,
+    sleep: sleep,
+    mood: mood,
     bowel: bowelEl.textContent,
+    mealFeel: mealFeelEl ? mealFeelEl.textContent : 'Not logged',
     water: waterEl ? waterEl.textContent : 'Not logged',
+    moved: document.getElementById('moved-sw').checked,
+    fermented: document.getElementById('fermented-sw').checked,
     eczema: document.getElementById('eczema-sw').checked
   };
   LS.set('checkin_' + todayKey(), entry);
@@ -1058,9 +1109,15 @@ function showDetail(entry, key, journal) {
   var html = '<div class="detbox"><div style="font-family:\'DM Serif Display\',serif;font-size:15px;margin-bottom:10px">' + label + '</div>';
   html += '<div class="detrow"><span class="detk">BLOATING</span><span>' + entry.bloating + '/5</span></div>';
   html += '<div class="detrow"><span class="detk">ENERGY</span><span>' + entry.energy + '/5</span></div>';
+  html += '<div class="detrow"><span class="detk">STRESS</span><span>' + (entry.stress || '-') + '/5</span></div>';
+  html += '<div class="detrow"><span class="detk">SLEEP</span><span>' + (entry.sleep || '-') + '/5</span></div>';
+  html += '<div class="detrow"><span class="detk">MOOD</span><span>' + (entry.mood || '-') + '/5</span></div>';
   html += '<div class="detrow"><span class="detk">BOWEL</span><span>' + esc(entry.bowel) + '</span></div>';
+  html += '<div class="detrow"><span class="detk">AFTER MEAL</span><span>' + (entry.mealFeel || 'Not logged') + '</span></div>';
   html += '<div class="detrow"><span class="detk">WATER</span><span>' + (entry.water || 'Not logged') + '</span></div>';
-  html += '<div class="detrow"><span class="detk">SKIN FLARE</span><span>' + (entry.eczema ? 'Yes' : 'No') + '</span></div>';
+  html += '<div class="detrow"><span class="detk">MOVED</span><span>' + (entry.moved ? 'Yes' : 'No') + '</span></div>';
+  html += '<div class="detrow"><span class="detk">FERMENTED FOOD</span><span>' + (entry.fermented ? 'Yes' : 'No') + '</span></div>';
+  html += '<div class="detrow"><span class="detk">SKIN REACTION</span><span>' + (entry.eczema ? 'Yes' : 'No') + '</span></div>';
   if (journal) {
     html += '<div class="detrow" style="flex-direction:column;align-items:flex-start"><span class="detk" style="margin-bottom:5px">JOURNAL</span><div class="detjournal">' + esc(journal.text) + '</div></div>';
   }
@@ -1159,13 +1216,13 @@ function exportData() {
   var jentries = LS.get('journal_entries', []);
   var jmap = {};
   for (var i = 0; i < jentries.length; i++) { jmap[jentries[i].date] = jentries[i].text; }
-  var rows = ['Date,Bloating (1-5),Energy (1-5),Bowel Movement,Water Intake,Skin Flare,Journal Entry'];
+  var rows = ['Date,Bloating (1-5),Energy (1-5),Stress (1-5),Sleep (1-5),Mood (1-5),Bowel Movement,After Meal,Water Intake,Moved,Fermented Food,Skin Reaction,Journal Entry'];
   idx.sort();
   for (var i = 0; i < idx.length; i++) {
     var e = LS.get('checkin_' + idx[i]);
     if (e) {
       var j = jmap[e.date] ? jmap[e.date].replace(/"/g, '""').replace(/\n/g, ' ') : '';
-      rows.push(e.date + ',' + e.bloating + ',' + e.energy + ',"' + e.bowel + '","' + (e.water || 'Not logged') + '",' + (e.eczema ? 'Yes' : 'No') + ',"' + j + '"');
+      rows.push(e.date + ',' + e.bloating + ',' + e.energy + ',' + (e.stress||'') + ',' + (e.sleep||'') + ',' + (e.mood||'') + ',"' + e.bowel + '","' + (e.mealFeel||'Not logged') + '","' + (e.water||'Not logged') + '",' + (e.moved?'Yes':'No') + ',' + (e.fermented?'Yes':'No') + ',' + (e.eczema?'Yes':'No') + ',"' + j + '"');
     }
   }
   try {
@@ -1200,6 +1257,9 @@ function clearAllData() {
 obCheck();
 buildDots('dots-bloating');
 buildDots('dots-energy');
+buildDots('dots-stress');
+buildDots('dots-sleep');
+buildDots('dots-mood');
 buildBanner('pb-checkin');
 checkTodayDone();
 buildHerbs();
