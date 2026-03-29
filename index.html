@@ -406,27 +406,36 @@ body { font-family: 'DM Sans', sans-serif; background: #F7F6F2; color: #1A1916; 
 
 <script>
 // ── ONBOARDING ───────────────────────────────────────────────────
-var obChecked = false;
-
 function toggleObCheck() {
-  obChecked = !obChecked;
   var cb = document.getElementById('ob-checkbox');
   var btn = document.getElementById('ob-btn');
-  if (cb) { cb.className = 'ob-checkbox' + (obChecked ? ' checked' : ''); cb.innerHTML = obChecked ? '&#10003;' : ''; }
-  if (btn) { btn.className = 'ob-btn' + (obChecked ? ' ready' : ''); }
+  if (!cb || !btn) return;
+  if (cb.checked) {
+    btn.style.background = '#2D6A4F';
+    btn.style.color = '#fff';
+    btn.style.cursor = 'pointer';
+  } else {
+    btn.style.background = '#E2DDD4';
+    btn.style.color = '#8A8578';
+    btn.style.cursor = 'not-allowed';
+  }
 }
 
 function enterApp() {
-  if (!obChecked) return;
+  var cb = document.getElementById('ob-checkbox');
+  if (!cb || !cb.checked) {
+    alert('Please tick the checkbox first.');
+    return;
+  }
   var ob = document.getElementById('onboarding');
-  if (ob) ob.classList.add('hidden');
+  if (ob) ob.style.display = 'none';
   LS.set('ob_accepted', true);
 }
 
 function checkOnboarding() {
   if (LS.get('ob_accepted')) {
     var ob = document.getElementById('onboarding');
-    if (ob) ob.classList.add('hidden');
+    if (ob) ob.style.display = 'none';
   }
 }
 ```
