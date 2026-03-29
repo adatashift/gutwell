@@ -90,8 +90,6 @@ ready and just start.
 💼 https://www.linkedin.com/in/renellegriffith/
 🌐 GUTWELL LINK https://adatashift.github.io/gutwell-ai-health-app/
 
-You're right. Short and clean is better. Here's the trimmed version:
-
 ---
 ## ⚠️ Disclaimer
 This is a demonstration project exploring AI-assisted development. 
