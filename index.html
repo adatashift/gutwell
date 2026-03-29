@@ -80,7 +80,8 @@ body { font-family: 'DM Sans', sans-serif; background: #F7F6F2; color: #1A1916; 
 .rmtick { position: absolute; top: 8px; right: 6px; font-size: 11px; color: #2D6A4F; }
 
 /* DOTS */
-.score-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+.score-row { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 14px; }
+@media(min-width:600px){ .score-row { grid-template-columns: 1fr 1fr; } }
 .score-block label { display: block; font-family: 'DM Mono', monospace; font-size: 10px; color: #8A8578; margin-bottom: 7px; letter-spacing: 0.3px; }
 .dots { display: flex; gap: 6px; }
 .dot { width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #E2DDD4; background: #F0EEE8; cursor: pointer; font-family: 'DM Mono', monospace; font-size: 13px; display: flex; align-items: center; justify-content: center; color: #8A8578; }
