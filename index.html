@@ -494,7 +494,9 @@ function obEnter() {
 }
 
 function obCheck() {
-  // Onboarding shows every visit
+  var ob = document.getElementById('onboarding');
+  if (ob) ob.scrollTop = 0;
+  window.scrollTo(0, 0);
 }
 
 // Detect WhatsApp / in-app browser and show warning
