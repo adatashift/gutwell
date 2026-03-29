@@ -229,10 +229,11 @@ body { font-family: 'DM Sans', sans-serif; background: #F7F6F2; color: #1A1916; 
     <p>This app is for educational and demonstration purposes only. It is not a medical application and does not provide medical advice. Always consult a qualified healthcare practitioner before making any changes to your diet, supplements, or health routine.</p>
   </div>
 
-  <div class="ob-check-row" onclick="toggleObCheck()">
-    <div class="ob-checkbox" id="ob-checkbox"></div>
-    <div class="ob-check-text">I understand this is an educational demonstration project and not a substitute for professional medical advice.</div>
-  </div>
+  <div class="ob-check-row">
+    <div class="ob-checkbox" id="ob-checkbox" onclick="toggleObCheck()" style="cursor:pointer;min-width:22px"></div>
+    <div class="ob-check-text" onclick="toggleObCheck()" style="cursor:pointer">I understand this is an educational demonstration project and not a substitute for professional medical advice.</div>
+</div>
+```
 
   <button class="ob-btn" id="ob-btn" onclick="enterApp()">I Understand &mdash; Enter GutWell</button>
 
