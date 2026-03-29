@@ -89,7 +89,16 @@ ready and just start.
 📧 renellegriffith1@gmail.com
 💼 https://www.linkedin.com/in/renellegriffith/
 🌐 GUTWELL LINK https://adatashift.github.io/gutwell-ai-health-app/
+
+You're right. Short and clean is better. Here's the trimmed version:
+
 ---
+## ⚠️ Disclaimer
+This is a demonstration project exploring AI-assisted development. 
+It is not a medical application. Always consult a qualified 
+healthcare practitioner before making changes to your health routine.
+```
 
 *Continuous learner · Problem solver · Trinidad & Tobago · 
 Powered by curiosity
+
