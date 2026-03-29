@@ -9,7 +9,7 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'DM Sans', sans-serif; background: #F7F6F2; color: #1A1916; min-height: 100vh; }
-  
+
 /* ONBOARDING SCREEN */
 #onboarding { position: fixed; inset: 0; background: #F7F6F2; z-index: 9999; overflow-y: auto; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 24px; }
 #onboarding.hidden { display: none; }
@@ -23,13 +23,13 @@ body { font-family: 'DM Sans', sans-serif; background: #F7F6F2; color: #1A1916; 
 .ob-warn-title { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #B5832A; margin-bottom: 8px; }
 .ob-warn p { font-size: 13px; color: #7a5a1a; line-height: 1.6; margin: 0; }
 .ob-check-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; width: 100%; max-width: 420px; cursor: pointer; }
-.ob-checkbox { width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid #E2DDD4; background: #fff; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 13px; margin-top: 1px; transition: all 0.15s; cursor: pointer; }
+.ob-checkbox { width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid #E2DDD4; background: #fff; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 13px; margin-top: 1px; transition: all 0.15s; }
 .ob-checkbox.checked { background: #2D6A4F; border-color: #2D6A4F; color: #fff; }
 .ob-check-text { font-size: 13px; color: #1A1916; line-height: 1.5; }
 .ob-btn { width: 100%; max-width: 420px; background: #E2DDD4; color: #8A8578; font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.8px; text-transform: uppercase; padding: 14px; border-radius: 10px; border: none; cursor: not-allowed; font-weight: 500; transition: all 0.2s; margin-top: 4px; }
 .ob-btn.ready { background: #2D6A4F; color: #fff; cursor: pointer; }
 .ob-footer { font-family: 'DM Mono', monospace; font-size: 10px; color: #8A8578; text-align: center; margin-top: 20px; line-height: 1.6; }
-```
+
 /* OPEN-IN-BROWSER BANNER */
 #owbanner { background: #1A1916; color: #fff; padding: 12px 16px; font-size: 13px; text-align: center; line-height: 1.5; display: none; }
 #owbanner strong { color: #FFD166; }
@@ -180,28 +180,6 @@ body { font-family: 'DM Sans', sans-serif; background: #F7F6F2; color: #1A1916; 
 .jtext { font-size: 13px; line-height: 1.6; }
 .jempty { font-size: 13px; color: #8A8578; font-style: italic; }
 
-/* CHAT */
-.chatwrap { background: #fff; border: 1px solid #E2DDD4; border-radius: 12px; display: flex; flex-direction: column; }
-.chatmsgs { padding: 16px; display: flex; flex-direction: column; gap: 12px; min-height: 200px; max-height: 50vh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
-.cmsg { max-width: 82%; }
-.cmsg.cu { align-self: flex-end; }
-.cmsg.ca { align-self: flex-start; }
-.cmlabel { font-family: 'DM Mono', monospace; font-size: 9px; color: #8A8578; margin-bottom: 3px; }
-.cmsg.cu .cmlabel { text-align: right; }
-.cmbubble { padding: 11px 14px; border-radius: 12px; font-size: 14px; line-height: 1.55; }
-.cmsg.cu .cmbubble { background: #2D6A4F; color: #fff; border-bottom-right-radius: 3px; }
-.cmsg.ca .cmbubble { background: #F0EEE8; border: 1px solid #E2DDD4; border-bottom-left-radius: 3px; }
-.chips { display: flex; gap: 7px; flex-wrap: wrap; padding: 10px 14px; border-top: 1px solid #E2DDD4; }
-.chip { font-family: 'DM Mono', monospace; font-size: 10px; padding: 6px 11px; border-radius: 14px; border: 1px solid #E2DDD4; background: #F0EEE8; color: #8A8578; cursor: pointer; }
-.chatinputrow { display: flex; gap: 8px; padding: 12px 14px; border-top: 1px solid #E2DDD4; }
-.cinput { flex: 1; font-family: 'DM Sans', sans-serif; font-size: 14px; padding: 9px 13px; border: 1.5px solid #E2DDD4; border-radius: 8px; background: #F0EEE8; color: #1A1916; outline: none; resize: none; min-height: 40px; }
-.cinput:focus { border-color: #2D6A4F; }
-.tdots { display: flex; gap: 4px; align-items: center; }
-.tdots span { width: 6px; height: 6px; border-radius: 50%; background: #8A8578; animation: td 1s infinite; }
-.tdots span:nth-child(2) { animation-delay: .15s; }
-.tdots span:nth-child(3) { animation-delay: .3s; }
-@keyframes td { 0%,60%,100% { transform: translateY(0); } 30% { transform: translateY(-4px); } }
-
 /* TOAST */
 #toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #2D6A4F; color: #fff; font-family: 'DM Mono', monospace; font-size: 12px; padding: 10px 22px; border-radius: 30px; opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 9999; white-space: nowrap; }
 #toast.show { opacity: 1; }
@@ -210,40 +188,47 @@ body { font-family: 'DM Sans', sans-serif; background: #F7F6F2; color: #1A1916; 
 <body>
 
 <!-- ONBOARDING SCREEN -->
-<div id="onboarding" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#F7F6F2;z-index:9999;overflow-y:auto;padding:24px;">
+<div id="onboarding">
+  <div class="ob-logo">Gut<span>Well</span></div>
+  <div class="ob-tagline">Caribbean Gut Health Companion</div>
 
-  <div style="max-width:420px;margin:0 auto;padding-top:20px;">
+  <div class="ob-section">
+    <div class="ob-section-title">What This App Is</div>
+    <p>GutWell is an educational demonstration project exploring how AI can be used to build practical, real-world health tools. It was created to showcase prompt engineering and AI-assisted app development using Claude by Anthropic.</p>
+  </div>
 
-    <div style="text-align:center;margin-bottom:24px;">
-      <div style="font-family:'DM Serif Display',serif;font-size:38px;color:#2D6A4F;">Gut<span style="color:#B5832A;">Well</span></div>
-      <div style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8578;letter-spacing:1px;margin-top:4px;">CARIBBEAN GUT HEALTH COMPANION</div>
-    </div>
+  <div class="ob-section">
+    <div class="ob-section-title">What It Offers</div>
+    <p>A structured gut health protocol with Caribbean-specific meal guidance, herb rotation, daily symptom tracking, journaling, and an AI wellness assistant — all designed for general educational and wellness reference.</p>
+  </div>
 
-    <div style="background:#fff;border:1px solid #E2DDD4;border-radius:12px;padding:16px;margin-bottom:12px;">
-      <div style="font-family:'DM Mono',monospace;font-size:10px;color:#2D6A4F;letter-spacing:1px;margin-bottom:8px;">WHAT THIS APP IS</div>
-      <p style="font-size:13px;color:#8A8578;line-height:1.6;margin:0;">GutWell is an educational demonstration project built to explore how AI can be used to create practical health tools. It showcases prompt engineering and AI-assisted app development using Claude by Anthropic.</p>
-    </div>
+  <div class="ob-warn">
+    <div class="ob-warn-title">Important Disclaimer</div>
+    <p>This app is for educational and demonstration purposes only. It is not a medical application and does not provide medical advice. Always consult a qualified healthcare practitioner before making any changes to your diet, supplements, or health routine.</p>
+  </div>
 
-    <div style="background:#FBF0DC;border:1px solid #e8cfa0;border-radius:12px;padding:16px;margin-bottom:12px;">
-      <div style="font-family:'DM Mono',monospace;font-size:10px;color:#B5832A;letter-spacing:1px;margin-bottom:8px;">DISCLAIMER</div>
-      <p style="font-size:13px;color:#7a5a1a;line-height:1.6;margin:0;">This app is for educational and demonstration purposes only. It is not a medical application and does not provide medical advice. Always consult a qualified healthcare practitioner before making changes to your health routine.</p>
-    </div>
+  <div style="width:100%;max-width:420px;margin-bottom:16px;">
+    <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;padding:14px;background:#fff;border:1.5px solid #E2DDD4;border-radius:10px;">
+      <input type="checkbox" id="ob-checkbox" style="width:22px;height:22px;min-width:22px;margin-top:2px;cursor:pointer;accent-color:#2D6A4F;" onchange="obChange()">
+      <span style="font-size:13px;color:#1A1916;line-height:1.5;">I understand this is an educational demonstration project and not a substitute for professional medical advice.</span>
+    </label>
+  </div>
 
-    <div style="background:#fff;border:1px solid #E2DDD4;border-radius:12px;padding:16px;margin-bottom:20px;">
-      <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
-        <input type="checkbox" id="ob-cb" style="width:20px;height:20px;min-width:20px;margin-top:2px;accent-color:#2D6A4F;" onchange="obCheckChange()">
-        <span style="font-size:13px;color:#1A1916;line-height:1.5;">I understand this is an educational project and not a substitute for professional medical advice.</span>
-      </label>
-    </div>
+  <button id="ob-btn" disabled style="width:100%;max-width:420px;background:#ccc;color:#fff;font-size:15px;font-weight:600;padding:18px;border-radius:12px;border:none;display:block;cursor:not-allowed;" onclick="obEnter()">Enter GutWell</button>
 
-    <button id="ob-btn" style="width:100%;background:#ccc;color:#fff;font-size:15px;font-weight:600;padding:18px;border-radius:12px;border:none;display:block;" disabled>Enter GutWell</button>
+  <div class="ob-footer">
+    Built with Claude AI &middot; A prompt engineering project<br>
+    &copy; 2025 &middot; Educational use only
+  </div>
 
-    <p style="text-align:center;font-size:11px;color:#8A8578;margin-top:20px;">Built with Claude AI &middot; Educational use only</p>
-
+  <div style="width:100%;max-width:420px;margin-top:24px;padding-top:20px;border-top:1px solid #E2DDD4;text-align:center;">
+    <div style="font-family:'DM Serif Display',serif;font-size:16px;color:#1A1916;margin-bottom:4px;">Renelle Griffith</div>
+    <div style="font-family:'DM Mono',monospace;font-size:10px;color:#2D6A4F;letter-spacing:0.5px;margin-bottom:8px;">OPERATIONS &amp; BUSINESS INTELLIGENCE PROFESSIONAL</div>
+    <div style="font-size:12px;color:#8A8578;line-height:1.6;margin-bottom:12px;font-style:italic;">I turn operational complexity into clear, accountable outputs &mdash; the kind that executives trust and organisations depend on.</div>
+    <a href="https://www.linkedin.com/in/renellegriffith/" target="_blank" style="display:inline-block;font-family:'DM Mono',monospace;font-size:10px;color:#fff;background:#2D6A4F;padding:8px 18px;border-radius:20px;text-decoration:none;letter-spacing:0.5px;">Connect on LinkedIn</a>
   </div>
 </div>
-```
-  
+
 <!-- WhatsApp warning banner - shown if opened inside WhatsApp/viewer -->
 <div id="owbanner">
   <strong>Important:</strong> Tap the 3 dots (top right) &rarr; "Open in Chrome" or "Open in Browser" for GutWell to work properly.
@@ -404,40 +389,45 @@ body { font-family: 'DM Sans', sans-serif; background: #F7F6F2; color: #1A1916; 
 
 
 <div id="toast"></div>
-  <div style="text-align:center;padding:16px 24px 24px;font-family:'DM Mono',monospace;font-size:10px;color:#8A8578;border-top:1px solid #E2DDD4;margin-top:8px;letter-spacing:0.3px">
+
+<div style="text-align:center;padding:16px 24px 24px;font-family:'DM Mono',monospace;font-size:10px;color:#8A8578;border-top:1px solid #E2DDD4;margin-top:8px;letter-spacing:0.3px">
   For demonstration purposes only &middot; Not medical advice &middot; Always consult a qualified healthcare practitioner
 </div>
 
 <script>
 // ── ONBOARDING ───────────────────────────────────────────────────
-function obCheckChange() {
-  var cb = document.getElementById('ob-cb');
+function obChange() {
+  var cb = document.getElementById('ob-checkbox');
   var btn = document.getElementById('ob-btn');
   if (!cb || !btn) return;
   if (cb.checked) {
     btn.disabled = false;
     btn.style.background = '#2D6A4F';
     btn.style.cursor = 'pointer';
-    btn.onclick = function() {
-      document.getElementById('onboarding').style.display = 'none';
-      try { localStorage.setItem('gw_ob', '1'); } catch(e) {}
-    };
   } else {
     btn.disabled = true;
     btn.style.background = '#ccc';
     btn.style.cursor = 'not-allowed';
-    btn.onclick = null;
   }
 }
 
-function checkOnboarding() {
+function obEnter() {
+  var cb = document.getElementById('ob-checkbox');
+  if (!cb || !cb.checked) return;
+  var ob = document.getElementById('onboarding');
+  if (ob) ob.style.display = 'none';
+  try { localStorage.setItem('gw_seen', '1'); } catch(e) {}
+}
+
+function obCheck() {
   try {
-    if (localStorage.getItem('gw_ob') === '1') {
-      document.getElementById('onboarding').style.display = 'none';
+    if (localStorage.getItem('gw_seen') === '1') {
+      var ob = document.getElementById('onboarding');
+      if (ob) ob.style.display = 'none';
     }
   } catch(e) {}
 }
-```
+
 // Detect WhatsApp / in-app browser and show warning
 (function() {
   var ua = navigator.userAgent || '';
@@ -1015,7 +1005,7 @@ function clearAllData() {
 }
 
 // ── INIT ─────────────────────────────────────────────────────────
-checkOnboarding();
+obCheck();
 buildDots('dots-bloating');
 buildDots('dots-energy');
 buildBanner('pb-checkin');
